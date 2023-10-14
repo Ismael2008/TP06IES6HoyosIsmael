@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Alumnos</title>
+</head>
+
+<body>
+	<div>
+		<h2>Carga de ALUMNOS</h2>
+		<div>
+			<form th:object="${alumno}" th:action="@{/cargarAlumno}" method="post">
+				<label for="nombre">Nombre:</label>
+				<input type="text" id="nombre" th:field="*{nombre}"><br>
+				<label for="apellido">Apellido:</label>
+				<input type="text" id="apellido" th:field="*{apellido}"><br>
+				<label for="direccionCalle">Calle:</label>
+				<input type="text" id="direccionCalle" th:field="*{direccionCalle}"><br>
+				<label for="direccionNumero">Número:</label>
+				<input type="number" id="direccionNumero" th:field="*{direccionNumero}"><br>
+				<label for="direccionBarrio">Barrio:</label>
+				<input type="text" id="direccionBarrio" th:field="*{direccionBarrio}"><br>
+				<label for="direccionCiudad">Ciudad:</label>
+				<input type="text" id="direccionCiudad" th:field="*{direccionCiudad}"><br>
+				<label for="direccionLocalidad">Localidad:</label>
+				<input type="text" id="direccionLocalidad" th:field="*{direccionLocalidad}"><br>
+				<label for="direccionCP">Código Postal:</label>
+				<input type="number" id="direccionCP" th:field="*{direccionCP}"><br>
+				<label for="dni">DNI:</label>
+				<input type="number" id="dni" th:field="*{dni}"><br>
+				<label for="fechaNac">Fecha de Nacimiento:</label>
+				<input type="date" id="fechaNac" th:field="*{fechaNac}"><br>
+				<label for="telefono">Teléfono:</label>
+				<input type="tel" id="telefono" th:field="*{telefono}"><br>
+				<label for="correoElectronico">Email:</label>
+				<input type="email" id="correoElectronico" th:field="*{correoElectronico}"><br>
+				<label for="edad">Edad:</label>
+				<input type="number" id="edad" th:field="*{edad}"><br>
+				<label for="estado">Estado:</label>
+				<input type="checkbox" id="estado" th:field="*{estado}"><br>
+				
+				<input type="submit" value="Cargar Alumno">
+			</form>
+		</div>
+	</div>
+
+</body>
+</htmlxmlns:th="https: //www.thymeleaf.org">
