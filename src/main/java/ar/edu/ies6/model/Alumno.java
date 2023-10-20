@@ -1,6 +1,5 @@
 package ar.edu.ies6.model;
 
-import java.util.Date;
 import java.time.LocalDate;
 import java.time.Period;
 import org.springframework.stereotype.Component;
@@ -16,22 +15,13 @@ public class Alumno {
 	private String direccionLocalidad;
 	private Integer direccionCP;
 	private String dni;
-	private Date fechaNac;
+	private LocalDate fechaNac;
 	private String telefono;
 	private String correoElectronico;
 	private Boolean estado;
-	private Integer edad;
 	
 	public Alumno() {
 		// TODO Auto-generated constructor stub
-	}
-
-	public Integer getEdad() {
-		return edad;
-	}
-
-	public void setEdad(Integer edad) {
-		this.edad = edad;
 	}
 
 	public String getNombre() {
@@ -106,11 +96,11 @@ public class Alumno {
 		this.dni = dni;
 	}
 
-	public Date getFechaNac() {
+	public LocalDate getFechaNac() {
 		return fechaNac;
 	}
 
-	public void setFechaNac(Date fechaNac) {
+	public void setFechaNac(LocalDate fechaNac) {
 		this.fechaNac = fechaNac;
 	}
 
@@ -138,12 +128,12 @@ public class Alumno {
 		this.estado = estado;
 	}
 	
-	public Integer obtenerEdad(String fechaNacimiento) {
+	public Integer obtenerEdad() {
+		int edad=0;
 		
-		LocalDate fechaNac = LocalDate.parse(fechaNacimiento);
 		LocalDate fechaActual = LocalDate.now();
 		Period periodo = Period.between(fechaNac, fechaActual);
-		int edad = periodo.getYears();
+		edad = periodo.getYears();
 		
 		return edad;
 	}
