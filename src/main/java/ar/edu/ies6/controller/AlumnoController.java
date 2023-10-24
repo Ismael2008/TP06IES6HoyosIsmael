@@ -1,9 +1,9 @@
 package ar.edu.ies6.controller;
 
 import ar.edu.ies6.model.Alumno;
+import ar.edu.ies6.util.ListadoAlumnos;
+
 import java.time.LocalDate;
-import java.util.List;
-import java.util.ArrayList;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +14,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AlumnoController {
 	
-	// Declaración de la lista a nivel de clase para que esté disponible en todos los métodos.
-    private List<Alumno> listado = new ArrayList<>();
 	
 	@GetMapping({"/index", "/", "/home", "/alumno"})
 	public ModelAndView cargarAlumno() {
@@ -34,15 +32,14 @@ public class AlumnoController {
 	
 	@PostMapping("/cargarAlumno")
     public ModelAndView cargarAlumno(@ModelAttribute("alumno") Alumno alumno) {
- 	
-		// Carga el objeto 'alumno' en la lista 'listado'.
-        listado.add(alumno);
 		
+		ListadoAlumnos.getListado().add(alumno);
+ 	
         ModelAndView modelView = new ModelAndView ("listadoAlumnos");
 		
-		modelView.addObject("listado", listado);
+		modelView.addObject("listado", ListadoAlumnos.getListado());
 		
 		return modelView;	
 	}
-
+	
 }
