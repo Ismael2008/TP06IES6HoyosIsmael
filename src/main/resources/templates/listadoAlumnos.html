@@ -13,7 +13,8 @@
 
 <body>
 	<div class="container">
-		<table class="table table-dark table-striped-columns">
+		<table class="table table-bordered border-success">
+			<thead class="table-light">
 			<tr>
 				<th>Nombre</th>
 				<th>Apellido</th>
@@ -29,7 +30,10 @@
 				<th>Teléfono</th>
 				<th>Correo Electrónico</th>
 				<th>Estado</th>
+				<th>Edición</th>
 			</tr>
+			</thead>
+			<tbody class="table-group-divider">
 			<tr th:each="alumno:${listado}">
 				<td th:text="${alumno.nombre}"></td>
 				<td th:text="${alumno.apellido}"></td>
@@ -45,7 +49,10 @@
 				<td th:text="${alumno.telefono}"></td>
 				<td th:text="${alumno.correoElectronico}"></td>
 				<td th:text="${alumno.estado}"></td>
+				<td><a type="button" class="btn btn-outline-success" href="#"
+						th:href="@{'/eliminarAlumno/'+${alumno.dni}}">Eliminar</a></td>
 			</tr>
+			</tbody>
 		</table>
 		<form>
 			<input type="button" onclick="history.back()" name="Volver atrás" value="Volver atrás">

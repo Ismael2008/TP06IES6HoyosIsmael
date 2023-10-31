@@ -30,7 +30,7 @@
 				<label class="form-label" for="direccionCP">Código Postal:</label>
 				<input class="form-control" type="number" id="direccionCP" th:field="*{direccionCP}"><br>
 				<label class="form-label" for="dni">DNI:</label>
-				<input class="form-control" type="number" id="dni" th:field="*{dni}"><br>
+				<input class="form-control" type="number" id="dni" th:field="*{dni}" required><br>
 				<label class="form-label" for="fechaNac">Fecha de Nacimiento:</label>
 				<input class="form-control" type="date" id="fechaNac" th:field="*{fechaNac}"><br>
 				<label class="form-label" for="telefono">Teléfono:</label>
@@ -38,7 +38,7 @@
 				<label class="form-label" for="correoElectronico">Email:</label>
 				<input class="form-control" type="email" id="correoElectronico" th:field="*{correoElectronico}"><br>
 				<label class="form-label" for="estado">Estado:</label>
-				<input class="form-control" type="checkbox" id="estado" th:field="*{estado}"><br>
+				<input type="checkbox" id="estado" th:field="*{estado}"><br>
 				
 				<input type="submit" value="Cargar Alumno">
 			</form>
