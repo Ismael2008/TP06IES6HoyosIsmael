@@ -50,7 +50,9 @@
 				<td th:text="${alumno.correoElectronico}"></td>
 				<td th:text="${alumno.estado}"></td>
 				<td><a type="button" class="btn btn-outline-success" href="#"
-						th:href="@{'/eliminarAlumno/'+${alumno.dni}}">Eliminar</a></td>
+					th:href="@{'/eliminarAlumno/'+${alumno.dni}}">Eliminar</a>
+					<a type="button" class="btn btn-outline-success" href="#"
+					th:href="@{'/modificarAlumno/'+${alumno.dni}}">Modificar</a></td>
 			</tr>
 			</tbody>
 		</table>
