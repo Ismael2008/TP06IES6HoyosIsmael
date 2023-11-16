@@ -6,14 +6,12 @@ import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-//import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
 @Component
 public class Alumno {
 	@Column
-	//@NotBlank @Size(min = 1, max = 30)
 	private String nombre;
 	@Column
 	private String apellido;

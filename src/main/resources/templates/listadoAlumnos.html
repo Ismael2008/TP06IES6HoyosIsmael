@@ -13,6 +13,7 @@
 
 <body>
 	<div class="container">
+		<h2>Listado de ALUMNOS</h2>
 		<table class="table table-bordered border-success">
 			<thead class="table-success">
 			<tr>
@@ -44,7 +45,7 @@
 				<td th:text="${alumno.direccionLocalidad}"></td>
 				<td th:text="${alumno.direccionCP}"></td>
 				<td th:text="${alumno.dni}"></td>
-				<td th:text="${alumno.fechaNac}"></td>
+				<td th:text="${#temporals.format(alumno.fechaNac, 'dd-MM-yyyy')}"></td>
 				<td th:text="${alumno.obtenerEdad()}"></td>
 				<td th:text="${alumno.telefono}"></td>
 				<td th:text="${alumno.correoElectronico}"></td>
@@ -57,7 +58,10 @@
 			</tbody>
 		</table>
 		<form>
-			<input type="button" onclick="history.back()" name="Volver atrás" value="Volver atrás">
+			<a type="button" class="btn btn-success" href="/index">Menú Inicio</a>
+			<a type="button" class="btn btn-success" href="/alumno">Alumnos</a>
+			<a type="button" class="btn btn-success" href="/docente">Docentes</a>
+			<input type="button" class="btn btn-success" value="Actualizar Página" onclick="document.location.reload();">
 		</form>
 	</div>
 </body>

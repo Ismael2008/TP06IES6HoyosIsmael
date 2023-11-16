@@ -21,6 +21,5 @@ public class ListadoAlumnos {
 		ListadoAlumnos.listado = listado;
 	}
 	
-	
 
 }

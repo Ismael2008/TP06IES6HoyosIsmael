@@ -3,6 +3,7 @@ package ar.edu.ies6.controller;
 import ar.edu.ies6.model.Alumno;
 import ar.edu.ies6.service.AlumnoService;
 import ar.edu.ies6.util.ListadoAlumnos;
+import ch.qos.logback.core.model.Model;
 
 import java.time.LocalDate;
 
@@ -22,15 +23,18 @@ public class AlumnoController {
 	@Autowired
 	AlumnoService alumnoService;
 	
-	@GetMapping({"/index", "/", "/home", "/alumno"})
+	@GetMapping({"/index"})
+	public String index(Model model) {
+		return "index";
+	}
+
+	@GetMapping({"/alumno"})
 	public ModelAndView cargarAlumno() {
 		
-		//Alumno alu = new Alumno ();
+		//alu.setFechaNac(LocalDate.of(1988, 8, 20));
+		//System.out.println("Edad: "+alu.obtenerEdad());
 		
-		alu.setFechaNac(LocalDate.of(1988, 8, 20));
-		System.out.println("Edad: "+alu.obtenerEdad());
-		
-		ModelAndView modelView = new ModelAndView ("index");
+		ModelAndView modelView = new ModelAndView ("alumno");
 		modelView.addObject("alumno", alu);
 		
 		return modelView;	
@@ -70,7 +74,7 @@ public class AlumnoController {
 	public ModelAndView modificarAlumno(@PathVariable Integer dni) throws Exception {
 		
 		//modifica un alumno (dni)
-		ModelAndView modificaAlumno = new ModelAndView("index");
+		ModelAndView modificaAlumno = new ModelAndView("alumno");
 		modificaAlumno.addObject("alumno", alumnoService.encontrarUnAlumno(dni));
 		
 		return modificaAlumno;	
