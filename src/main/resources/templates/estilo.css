@@ -1,0 +1,9 @@
+@charset "ISO-8859-1";
+.contenedor{
+	background-image: url(imagen/codigo.gif);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: aliceblue;
+	height: 350px;
+}
